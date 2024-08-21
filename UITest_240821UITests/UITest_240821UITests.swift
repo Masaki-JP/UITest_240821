@@ -28,9 +28,11 @@ final class UITest_240821UITests: XCTestCase {
         let sumLabel = app.staticTexts["sumLabel"]
 
         num1TextField.tap()
+        num1TextField.typeText(.init(repeating: XCUIKeyboardKey.delete.rawValue, count: (num1TextField.value as? String)?.count ?? 0))
         num1TextField.typeText("1")
 
         num2TextField.tap()
+        num2TextField.typeText(.init(repeating: XCUIKeyboardKey.delete.rawValue, count: (num1TextField.value as? String)?.count ?? 0))
         num2TextField.typeText("2")
 
         XCTAssertFalse(sumLabel.exists)

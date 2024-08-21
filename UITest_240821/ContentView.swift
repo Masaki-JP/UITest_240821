@@ -1,8 +1,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var num1: Int?
-    @State private var num2: Int?
+    @State private var num1: Int? = 0
+    @State private var num2: Int? = 0
     @State private var sum: Int?
     @FocusState private var focusedTextField: FocusedTextField?
 
