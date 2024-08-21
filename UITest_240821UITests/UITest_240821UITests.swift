@@ -21,6 +21,22 @@ final class UITest_240821UITests: XCTestCase {
         app.launch()
 
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+
+        let num1TextField = app.textFields["num1TextField"]
+        let num2TextField = app.textFields["num2TextField"]
+        let calculateButton = app.buttons["Calculate"]
+        let sumLabel = app.staticTexts["sumLabel"]
+
+        num1TextField.tap()
+        num1TextField.typeText("1")
+
+        num2TextField.tap()
+        num2TextField.typeText("2")
+
+        XCTAssertFalse(sumLabel.exists)
+
+        calculateButton.tap()
+        XCTAssertEqual(sumLabel.label, "sum: 3")
     }
 
     func testLaunchPerformance() throws {
