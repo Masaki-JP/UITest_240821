@@ -7,7 +7,7 @@ import SwiftUI
 struct UITest_240821App: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            PictureView()
         }
     }
 }

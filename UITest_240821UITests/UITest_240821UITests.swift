@@ -15,6 +15,32 @@ final class UITest_240821UITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
+//    func testExample() throws {
+//        // UI tests must launch the application that they test.
+//        let app = XCUIApplication()
+//        app.launch()
+//
+//        // Use XCTAssert and related functions to verify your tests produce the correct results.
+//
+//        let num1TextField = app.textFields["num1TextField"]
+//        let num2TextField = app.textFields["num2TextField"]
+//        let calculateButton = app.buttons["Calculate"]
+//        let sumLabel = app.staticTexts["sumLabel"]
+//
+//        num1TextField.tap()
+//        num1TextField.typeText(.init(repeating: XCUIKeyboardKey.delete.rawValue, count: (num1TextField.value as? String)?.count ?? 0))
+//        num1TextField.typeText("1")
+//
+//        num2TextField.tap()
+//        num2TextField.typeText(.init(repeating: XCUIKeyboardKey.delete.rawValue, count: (num1TextField.value as? String)?.count ?? 0))
+//        num2TextField.typeText("2")
+//
+//        XCTAssertFalse(sumLabel.exists)
+//
+//        calculateButton.tap()
+//        XCTAssertEqual(sumLabel.label, "sum: 3")
+//    }
+
     func testExample() throws {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
@@ -22,23 +48,8 @@ final class UITest_240821UITests: XCTestCase {
 
         // Use XCTAssert and related functions to verify your tests produce the correct results.
 
-        let num1TextField = app.textFields["num1TextField"]
-        let num2TextField = app.textFields["num2TextField"]
-        let calculateButton = app.buttons["Calculate"]
-        let sumLabel = app.staticTexts["sumLabel"]
-
-        num1TextField.tap()
-        num1TextField.typeText(.init(repeating: XCUIKeyboardKey.delete.rawValue, count: (num1TextField.value as? String)?.count ?? 0))
-        num1TextField.typeText("1")
-
-        num2TextField.tap()
-        num2TextField.typeText(.init(repeating: XCUIKeyboardKey.delete.rawValue, count: (num1TextField.value as? String)?.count ?? 0))
-        num2TextField.typeText("2")
-
-        XCTAssertFalse(sumLabel.exists)
-
-        calculateButton.tap()
-        XCTAssertEqual(sumLabel.label, "sum: 3")
+        let picture = app.images["Picture"]
+        XCTAssertTrue(picture.waitForExistence(timeout: 10.0))
     }
 
     func testLaunchPerformance() throws {
